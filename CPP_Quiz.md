@@ -1196,6 +1196,11 @@ void main(){
 ```c++
 정답
 
+void Increment(int& i) {
+	int& p = i;
+	p++;
+}
+
 void main(){
   int a = 2;
   Increment(a);
@@ -1216,5 +1221,28 @@ void main(){
   int a;
   MyMemset(&a, -1, 4);
   cout << a << endl;
+}
+```
+
+```c++
+정답
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void MyMemset(int* k, int c, size_t count) {
+	char* cP = (char*)k;
+	for (int i = 0; i < count; i++) {
+		*(cP + i) = c;
+	}
+}
+
+void main()
+{
+	int a;
+	MyMemset(&a, -1, 4);
+	cout << a << endl;
 }
 ```
