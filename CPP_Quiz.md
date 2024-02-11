@@ -1476,11 +1476,11 @@ using namespace std;
 
 void main()
 {
-	int grade[4][4] = { 
+	int grade[4][4] = {
 		{1,100,100,50},
 		{2,90,70,80},
 		{3,70,80,90},
-		{4,80,100,90} 
+		{4,80,100,90}
 	};
 
 	int sum[4];
@@ -1491,9 +1491,9 @@ void main()
 		float a = 0;
 		for (int j = 0; j < 4; j++) {
 			a += grade[j][i];
-			if (j > 0) {				
+			if (j > 0) {
 				s += grade[i][j];
-			}			
+			}
 		}
 		sum[i] = s;
 		if (i > 0) {
@@ -1503,7 +1503,7 @@ void main()
 
 	for (int i = 0; i < 4; i++) {
 		for (int j = 1; j < 4; j++) {
-			
+
 		}
 	}
 
@@ -1515,3 +1515,98 @@ void main()
 	}
 }
 ```
+
+# Chapter 7
+
+- 구조체 정의와 일반 변수 정의의 차이를 설명하시오.
+- 구조체 타입을 정의할 때는 <span style="color: #44B444"></span>을 사용할 수도 있으며, <span style="color: #44B444"></span>를 이요하여 새로운 타입 이름으로 사용자 정의할 수도 있다.
+- 멤버로 char m을 가지는 구조체를 typedef를 이용하여 SType으로 사용자 정의하시오.
+- 구조체 객체는 대입 연산의 <span style="color: #44B444"></span>가 될 수 있다. 단 좌변과 우변의 구조체 타입이 일치해야 한다.
+- <span style="color: #44B444"></span> 연산자는 구조체 멤버를 접근하기 위하여 제공된다. <span style="color: #44B444"></span> 연산자의 피연산자는 두 개이며, 좌변이 구조체 객체 이름이고 우변은 멤버 이름이다.
+- <span style="color: #44B444"></span> 연산자는 구조체 멤버를 접근하기 위하여 제공된다. <span style="color: #44B444"></span> 연산자의 피연산자는 두 개이며, 좌변이 구조체 포인터이고 우변은 멤버 이름이다.
+- 다음 프로그램에서 잘못된 부분을 찾고 그 이유를 설명하시오.
+
+```c++
+typedef struct STag
+{
+  char m;
+} SType;
+
+void main(){
+  Stype a, b;
+
+  a.m = 1;
+  b = a;
+
+  if(a == b){
+    cout << "Equal" << endl;
+  }
+}
+```
+
+- 구조체의 크기는 모든 멤버들의 타입 크기의 총합보다 클 수 있다. 구조체 내부에 <span style="color: #44B444"></span>이 존재하기 때문이다. 따라서 실제 구조체가 차지하는 메모리 크기를 구하기 위해서는 <span style="color: #44B444"></span> 연산자를 사용해야 한다.
+- 다음 구조체에 대하여 구조체 멤버 맞춤(/Zp8, /Zp2, /Zp1)에 따른 메모리 구조도를 그려보시오.
+
+```c++
+typedef struct
+{
+  char c;
+  int i;
+}SType
+```
+
+- 다음 프로그램의 출력 결과와 이유를 설명하시오.
+
+```c++
+typedef struct
+{
+  int m;
+}SType;
+
+void Func(Stype arg)
+{
+  arg.m = 2;
+}
+
+void main(){
+  Stype a;
+  a.m = 1;
+
+  Func(a);
+
+  cout << a.m << endl;
+}
+```
+
+- <span style="color: #44B444"></span>는 구조체의 일종이며 멤버들이 메모리 영역을 공유한다. <span style="color: #44B444"></span>를 정의할 때는 struct 대신 <span style="color: #44B444"></span>을 사용한다.
+
+- 다음 프로그램의 출력 결과는 무엇인가?
+
+```c++
+typedef union
+{
+  __int64 a;
+  int b;
+}UType;
+
+void main(){
+  UType u;
+  u.a = 1;
+
+  cout << u.b << endnl;
+  cout << sizeof(u) << endl;
+}
+```
+
+{1} 다음 로봇 명세를 보고 프로그램을 작성하시오.
+| 이름       | 신장(m) | 무게(T) | 마력 |
+|------------|---------|---------|------|
+| 태권브이   | 18      | 80      | 3000 |
+| 마징가     | 17      | 70      | 2500 |
+| 메칸더브이 | 20      | 90      | 3500 |
+| 그랜다이져 | 33      | 100     | 5000 |
+
+(1) 로봇을 나타내는 구조체(Robot)를 설계하시오.
+(2) 로봇의 명세를 출력하는 함수 Print를 작성하시오(매개 변수 타입은 Robot*).
+(3) 로봇들의 평균 신장, 평균 무게, 평균 마력을 출력하는 함수 Avg를 작성하시오. (매개 변수  타입은 Robot [4])
+(4) (1), (2), (3)을 이용하여 모든 로봇의 명세를 출력하는 프로그램을 작성하시오.
