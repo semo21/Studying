@@ -1399,7 +1399,64 @@ void main(){
 ```c++
 정답
 
+#include <iostream>
 
+using namespace std;
+
+void main()
+{
+	int arr[] = { 1,6,9,7,3,2,0,4,8,5 };
+	int sum = 0;
+
+  // (1)
+	for (int i = 0; i < (sizeof(arr) / sizeof(int)); i++) {
+		sum += arr[i];
+	}
+	cout << sum << endl;
+
+
+  // (2)
+	int min = 0;
+	int max = 0;
+	for (int i = 0; i < (sizeof(arr) / sizeof(int)); i++) {
+		if (max < arr[i]) {
+			max = arr[i];
+		}
+		if (min > arr[i]) {
+			min = arr[i];
+		}
+	}
+	cout << min << ", " << max << endl;
+
+  // (3)
+	for (int i = 0; i < (sizeof(arr) / sizeof(int)); i++) {
+		for (int j = i; j < (sizeof(arr) / sizeof(int)); j++) {
+			if (arr[j] <= arr[i]) {
+				continue;
+			}
+			else{
+				int cur = arr[i];
+				arr[i] = arr[j];
+				arr[j] = cur;
+			}
+		}
+	}
+
+  // (4)
+	for (int i = 0; i < (sizeof(arr) / sizeof(int)); i++) {
+		for (int j = i; j < (sizeof(arr) / sizeof(int)); j++) {
+			if (arr[j] >= arr[i]) {
+				continue;
+			}
+			else {
+				int cur = arr[i];
+				arr[i] = arr[j];
+				arr[j] = cur;
+			}
+		}
+	}
+
+}
 ```
 
 {2} 다음은 네 학생의 국어, 영어, 수학 성적이다. 각 학생별 총점을 구하고, 각 과목별 평균을 출력하시오.
@@ -1409,3 +1466,52 @@ void main(){
 | 2 | 90 | 70 | 80 |
 | 3 | 70 | 80 | 90 |
 | 4 | 80 | 100 | 90 |
+
+```c++
+정답
+
+#include <iostream>
+
+using namespace std;
+
+void main()
+{
+	int grade[4][4] = { 
+		{1,100,100,50},
+		{2,90,70,80},
+		{3,70,80,90},
+		{4,80,100,90} 
+	};
+
+	int sum[4];
+	float avg[3];
+
+	for (int i = 0; i < 4; i++) {
+		int s = 0;
+		float a = 0;
+		for (int j = 0; j < 4; j++) {
+			a += grade[j][i];
+			if (j > 0) {				
+				s += grade[i][j];
+			}			
+		}
+		sum[i] = s;
+		if (i > 0) {
+			avg[i - 1] = a / 4;
+		}
+	}
+
+	for (int i = 0; i < 4; i++) {
+		for (int j = 1; j < 4; j++) {
+			
+		}
+	}
+
+	for (int i = 0; i < 4; i++) {
+		cout << sum[i] << " ";
+		if (i > 2)
+			continue;
+		cout << avg[i] << endl;
+	}
+}
+```
