@@ -1760,3 +1760,175 @@ void main() {
 	Avg(robots, size);
 }
 ```
+
+# Chapter 8
+
+- 함수 호출이 완료되면 반환을 한다. 이때 특정한 반환 값이 없는 경우가 있다. 이런 경우 사용하는 반환 타입은 <span style="color: #FF7777"></span>이다.
+
+- 함수 선언이 필요한 이유는 무엇인가?
+
+- C 표준 라이브러리 함수인 printf를 사용하기 위하여 포함시켜야 할 헤더 파일을 하나 이상 말해보시오.
+
+- 함수의 인자는 <span style="color: #FF7777"></span>와 <span style="color: #FF7777"></span>로 구분된다. <span style="color: #FF7777"></span> 는 함수 본체에서 사용되는 인자를 의미하며, <span style="color: #FF7777"></span>는 함수를 호출할 때 넘어가는 인자를 의미한다.
+
+- 다음 프로그램의 함수 Increment의 매개 변수와 실인자를 말해보시오.
+
+```c++
+int Increment(int arg){
+  arg++;
+  return arg;
+}
+
+void main(){
+  cout << Increment(3) << endl;
+}
+```
+
+- C++ 함수의 인자 전달 방식은 일반적으로 세 가지로 나누어진다. <span style="color: #FF7777"></span> 전달, <span style="color: #FF7777"></span> 전달, <span style="color: #FF7777"></span> 전달 방식이 있다.
+
+- 다음 프로그램의 출력 결과는 무엇인가?
+
+```c++
+void FuncValue(int  arg){
+  arg = 1;
+}
+
+void FuncPointer(int* arg){
+  *arg = 2;
+}
+
+void FuncReference(int& arg){
+  arg = 3;
+}
+
+void main(){
+  int i = 0;
+  FuncValue(i);
+  cout << i << endl;
+
+  int j = 0;
+  FuncPointer(&j);
+  cout << j  << endl;
+
+  int k = 0;
+  FuncReference(k);
+  cout << k << endl;
+}
+```
+
+- 함수 인자의 참조 전달은 내부적으로 포인터를 이용하여 구현되므로 본질적으로 주소 전달의 일종이라고 생각할 수 있다. 그렇다면 왜 C++에서는 참조 전달을 많이 사용하는 것인지 이유를 기술하시오.
+
+- 다음 프로그램의 함수 GetNextValue를 출력 결과가 2가 나오도록 수정하시오.
+
+```c++
+int GetNextValue(int& arg){
+  return arg + 1;
+}
+
+void main(){
+  cout << GetNextValue(1) << endl;
+}
+```
+
+- 다음은 함수 Increment의 선언이다. 이 함수를 제대로 호출하지 못한 경우는 무엇인가?
+
+```c++
+int Increment(int arg = 0, int delta = 1);
+```
+
+    1. Increment(3);
+    2. Increment(3, 2);
+    3. Increment();
+    4. Increment( , 2);
+
+- 가변 인자 함수의 인자는 최소 하나 이상의 고정 인자와 <span style="color: #FF7777"></span>로 이루어진다.
+
+- 가변 인자 함수의 인자 중에서 고정 인자의 마지막 인자를 기준 인자라고 한다. 기준 인자는 어떤 역할을 하는지 기술하시오.
+
+- 인자 타입열이 다르고 이름이 같은 함수를 여러 개 정의하는 것을 <span style="color: #FF7777"></span>라 한다.
+
+- 인자 타입열과 함수 이름은 같지만 반환 타입이 다른 경우는 함수 중복 정의를 할 수 없다. 그 이유를 실제 사례를 들어서 설명하시오.
+
+- 다음 두 함수는 중복 정의가 되지 않는다. 그 이유를 설명하시오.
+
+```c++
+void Func(int  arg);
+void Func(const int arg);
+```
+
+- 다음 두 함수는 중복 정의가 되지 않는다. 그 이유를 설명하시오.
+
+```c++
+void Func(int* arg);
+void Func(int arg[]);
+```
+
+{1} ++a, a++과 같은 동작을 하는 함수 IncrementPrev, IncrementPost를 작성하시오.
+
+{2} 다음 프로그램의 함수 Absolute는 인자의 값을 절댓값으로 변환하는 함수이다. 출력 결과가 3, 5가 나오도록 Absolute를 작성하시오.
+
+```c++
+void main(){
+  int a = 3;
+  int b = -5;
+
+  Absolute(a);
+  Absolute(b);
+
+  cout << a << endl;
+  cout << b << endl;
+}
+```
+
+{3} 다음 프로그램의 출력 결과가 6, 3, 1, 0이 되도록 함수 Sum을 작성하시오.
+
+```c++
+void main() {
+	cout << Sum(1, 2, 3) << endl;
+	cout << Sum(1, 2) << endl;
+	cout << Sum(1) << endl;
+	cout << Sum() << endl;
+}
+```
+
+{4} 가변 인자의 합계를 구하는 Sum 함수를 작성하시오. (단, 첫 매개 변수는 고정 인자로서 가변 인자의 개수를 나타낸다.)
+
+```c++
+void main() {
+	cout << Sum(5, 1, 2, 3, 4, 5) << endl;
+	cout << Sum(3, 1, 2, 3) << endl;
+	cout << Sum(1, 1) << endl;
+}
+```
+
+{5} 다음 프로그램과 같이 인자로 전달된 배열 요소를 출력하는 함수 Print를 작성하시오.
+
+```c++
+void main() {
+	const int size = 7;
+	int arr[10] = { 1,2,3,4,5,6,7 };
+	Print(arr, size);
+}
+```
+
+{6} 다음 프로그램과 같이 인자로 전달된 배열 요소의 순서를 뒤집는 함수 Reverse를 작성하시오.
+
+```c++
+void main() {
+	const  int size = 7;
+	int  arr[10] = { 1,2,3,4,5,6,7 };
+	Reverse(arr, size);
+	Print(arr, size);
+}
+```
+
+{7} 다음 프로그램과 같이 인자로 전달된 배열을 오름차순으로 정렬하는 함수 Sort를 작성하시오.
+
+```c++
+void main() {
+	const int  size = 7;
+	int arr[10] = { 7,1,3,5,6,2,4 };
+	Sort(arr, size);
+	Print(arr, size);
+}
+```
