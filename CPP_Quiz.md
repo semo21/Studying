@@ -1763,13 +1763,17 @@ void main() {
 
 # Chapter 8
 
-- 함수 호출이 완료되면 반환을 한다. 이때 특정한 반환 값이 없는 경우가 있다. 이런 경우 사용하는 반환 타입은 <span style="color: #FF7777"></span>이다.
+- 함수 호출이 완료되면 반환을 한다. 이때 특정한 반환 값이 없는 경우가 있다. 이런 경우 사용하는 반환 타입은 <span style="color: #44B444">void</span>이다.
 
 - 함수 선언이 필요한 이유는 무엇인가?
 
+  > <span style="color: #44B444">컴파일러는 코드를 위에서 아래로 순차적으로 컴파일하기 때문에 함수를 선언해두지 않고 main함수 이후에 함수를 선언하며 정의한다면 컴파일러에서 함수라고 확신하지 못해 main함수 이전에 미리 선언해두는 것이 중요하다.</span>
+
 - C 표준 라이브러리 함수인 printf를 사용하기 위하여 포함시켜야 할 헤더 파일을 하나 이상 말해보시오.
 
-- 함수의 인자는 <span style="color: #FF7777"></span>와 <span style="color: #FF7777"></span>로 구분된다. <span style="color: #FF7777"></span> 는 함수 본체에서 사용되는 인자를 의미하며, <span style="color: #FF7777"></span>는 함수를 호출할 때 넘어가는 인자를 의미한다.
+  > <span style="color: #44B444"></span>
+
+- 함수의 인자는 <span style="color: #44B444"></span>와 <span style="color: #44B444"></span>로 구분된다. <span style="color: #44B444"></span> 는 함수 본체에서 사용되는 인자를 의미하며, <span style="color: #44B444"></span>는 함수를 호출할 때 넘어가는 인자를 의미한다.
 
 - 다음 프로그램의 함수 Increment의 매개 변수와 실인자를 말해보시오.
 
@@ -1784,7 +1788,7 @@ void main(){
 }
 ```
 
-- C++ 함수의 인자 전달 방식은 일반적으로 세 가지로 나누어진다. <span style="color: #FF7777"></span> 전달, <span style="color: #FF7777"></span> 전달, <span style="color: #FF7777"></span> 전달 방식이 있다.
+- C++ 함수의 인자 전달 방식은 일반적으로 세 가지로 나누어진다. <span style="color: #44B444"></span> 전달, <span style="color: #44B444"></span> 전달, <span style="color: #44B444"></span> 전달 방식이 있다.
 
 - 다음 프로그램의 출력 결과는 무엇인가?
 
@@ -1841,11 +1845,11 @@ int Increment(int arg = 0, int delta = 1);
     3. Increment();
     4. Increment( , 2);
 
-- 가변 인자 함수의 인자는 최소 하나 이상의 고정 인자와 <span style="color: #FF7777"></span>로 이루어진다.
+- 가변 인자 함수의 인자는 최소 하나 이상의 고정 인자와 <span style="color: #44B444"></span>로 이루어진다.
 
 - 가변 인자 함수의 인자 중에서 고정 인자의 마지막 인자를 기준 인자라고 한다. 기준 인자는 어떤 역할을 하는지 기술하시오.
 
-- 인자 타입열이 다르고 이름이 같은 함수를 여러 개 정의하는 것을 <span style="color: #FF7777"></span>라 한다.
+- 인자 타입열이 다르고 이름이 같은 함수를 여러 개 정의하는 것을 <span style="color: #44B444"></span>라 한다.
 
 - 인자 타입열과 함수 이름은 같지만 반환 타입이 다른 경우는 함수 중복 정의를 할 수 없다. 그 이유를 실제 사례를 들어서 설명하시오.
 
