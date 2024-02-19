@@ -1771,9 +1771,9 @@ void main() {
 
 - C 표준 라이브러리 함수인 printf를 사용하기 위하여 포함시켜야 할 헤더 파일을 하나 이상 말해보시오.
 
-  > <span style="color: #44B444"></span>
+  > <span style="color: #44B444">stdio.h</span>
 
-- 함수의 인자는 <span style="color: #44B444"></span>와 <span style="color: #44B444"></span>로 구분된다. <span style="color: #44B444"></span> 는 함수 본체에서 사용되는 인자를 의미하며, <span style="color: #44B444"></span>는 함수를 호출할 때 넘어가는 인자를 의미한다.
+- 함수의 인자는 <span style="color: #44B444">매개 변수</span>와 <span style="color: #44B444">실인자</span>로 구분된다. <span style="color: #44B444">매개 변수</span> 는 함수 본체에서 사용되는 인자를 의미하며, <span style="color: #44B444">실인자</span>는 함수를 호출할 때 넘어가는 인자를 의미한다.
 
 - 다음 프로그램의 함수 Increment의 매개 변수와 실인자를 말해보시오.
 
@@ -1788,7 +1788,9 @@ void main(){
 }
 ```
 
-- C++ 함수의 인자 전달 방식은 일반적으로 세 가지로 나누어진다. <span style="color: #44B444"></span> 전달, <span style="color: #44B444"></span> 전달, <span style="color: #44B444"></span> 전달 방식이 있다.
+> <span style="color: #44B444">매개 변수: arg, 실인자: 3</span>
+
+- C++ 함수의 인자 전달 방식은 일반적으로 세 가지로 나누어진다. <span style="color: #44B444">값</span> 전달, <span style="color: #44B444">주소</span> 전달, <span style="color: #44B444">참조</span> 전달 방식이 있다.
 
 - 다음 프로그램의 출력 결과는 무엇인가?
 
@@ -1820,7 +1822,13 @@ void main(){
 }
 ```
 
+> <span style="color: #44B444">0</span>  
+> <span style="color: #44B444">2</span>  
+> <span style="color: #44B444">3</span>
+
 - 함수 인자의 참조 전달은 내부적으로 포인터를 이용하여 구현되므로 본질적으로 주소 전달의 일종이라고 생각할 수 있다. 그렇다면 왜 C++에서는 참조 전달을 많이 사용하는 것인지 이유를 기술하시오.
+
+  > <span style="color: #44B444">포인터를 이용한 주소 전달보다 사용성에서 편리하기 때문이다. 인자 전달이나 접근 과정에서 주소 연산자나 간접 연산자를 사용할 필요가 없기 때문이다.</span>
 
 - 다음 프로그램의 함수 GetNextValue를 출력 결과가 2가 나오도록 수정하시오.
 
@@ -1831,6 +1839,18 @@ int GetNextValue(int& arg){
 
 void main(){
   cout << GetNextValue(1) << endl;
+}
+```
+
+```c++
+정답
+
+int GetNextValue(const int& arg) {
+	return arg + 1;
+}
+
+void main() {
+	cout << GetNextValue(i) << endl;
 }
 ```
 
@@ -1845,13 +1865,19 @@ int Increment(int arg = 0, int delta = 1);
     3. Increment();
     4. Increment( , 2);
 
-- 가변 인자 함수의 인자는 최소 하나 이상의 고정 인자와 <span style="color: #44B444"></span>로 이루어진다.
+> <span style="color: #44B444">4번은 호출하지 못한다. 기본인자가 설정된 함수의 경우, 인수를 생략하려면 생략한 인수 이후에 나열되는 모든 인수도 기본값으로 사용해야 한다. 하지만 4번은 첫번째 인자를 기본값으로 사용하려하지만 두번째 인자는 값을 주려하므로 호출할 수 없는 형태이다.</span>
+
+- 가변 인자 함수의 인자는 최소 하나 이상의 고정 인자와 <span style="color: #44B444">줄임표</span>로 이루어진다.
 
 - 가변 인자 함수의 인자 중에서 고정 인자의 마지막 인자를 기준 인자라고 한다. 기준 인자는 어떤 역할을 하는지 기술하시오.
 
-- 인자 타입열이 다르고 이름이 같은 함수를 여러 개 정의하는 것을 <span style="color: #44B444"></span>라 한다.
+  > <span style="color: #44B444">함수 본체에서 가변 인자를 추출하기 위한 기준 위치가 된다.</span>
+
+- 인자 타입열이 다르고 이름이 같은 함수를 여러 개 정의하는 것을 <span style="color: #44B444">중복 정의(Overloading)</span>라 한다.
 
 - 인자 타입열과 함수 이름은 같지만 반환 타입이 다른 경우는 함수 중복 정의를 할 수 없다. 그 이유를 실제 사례를 들어서 설명하시오.
+
+  > <span style="color: #44B444"></span>
 
 - 다음 두 함수는 중복 정의가 되지 않는다. 그 이유를 설명하시오.
 
