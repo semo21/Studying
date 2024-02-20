@@ -1877,14 +1877,32 @@ int Increment(int arg = 0, int delta = 1);
 
 - 인자 타입열과 함수 이름은 같지만 반환 타입이 다른 경우는 함수 중복 정의를 할 수 없다. 그 이유를 실제 사례를 들어서 설명하시오.
 
-  > <span style="color: #44B444"></span>
+```c++
+int Func(int arg){
+  return arg;
+}
+
+double Func(int arg){
+  return (double)arg;
+}
+
+void main(){
+  Func(1);  // Error
+}
+
+// 위 코드를 실행햇을 때, 컴파일러는 어느 Func함수를 호출해야할지 모른다. 따라서 함수 이름과 인자 타입열이 같지만 반환 타입이 다른 경우는 함수 중복 정의를 사용할 수 없다.
+```
 
 - 다음 두 함수는 중복 정의가 되지 않는다. 그 이유를 설명하시오.
 
 ```c++
-void Func(int  arg);
+void Func(int arg);
 void Func(const int arg);
 ```
+
+> <span style="color: #44B444">만약 Func의 실인자로 a라는 1의 값을 가진 int형 변수를 전달한다고 가정하자. 그렇다면 a라는 변수가 직접 전달되는 것이 아닌, 실인자로 전달되는 것이기 때문에 a의 값인 1이 전달된다. 1은 상수이다. 따라서 Func(int arg)가 아닌 Func(const int arg)가 호출된다. 따라서 Func(int arg)는 전혀 쓰이지않게 되므로 존재 가치가 사라진다.</span>
+
+> > <span style="color: #44B444">하지만 int\*와 const int\*를 매개 변수로 선언한다면, int\* 에는 int타입을 가리키는 포인터, const int\*에는 const가 한정된 변수를 가리키는 포인터로, 컴파일러가 함수 호출 시 실인자로 넘어가는 포인터가 가리키는 대상에 const가 한정되어 있는지를 통해서 구분할 수 있으므로 함수 중복 정의 관점에서 TYPE\*과 const TYPE\*은 다른 것으로 취급한다.</span>
 
 - 다음 두 함수는 중복 정의가 되지 않는다. 그 이유를 설명하시오.
 
@@ -1893,7 +1911,31 @@ void Func(int* arg);
 void Func(int arg[]);
 ```
 
+> <span style="color: #44B444">함수의 매개 변수의 타입이 배열일 때, 해당 매개 변수는 배열의 맨 앞을 가리키는 포인터가 된다. 따라서 int\* arg과 int arg[]는 매개 변수로 쓰일 때 같은 타입이므로 같은 인자열과 같은 함수 이름이므로 함수 중복 정의가 불가하다.</span>
+
 {1} ++a, a++과 같은 동작을 하는 함수 IncrementPrev, IncrementPost를 작성하시오.
+
+```c++
+정답
+
+void IncrementPrev(int& arg) {
+	++arg;
+}
+
+void IncrementPost(int& arg) {
+	arg++;
+}
+
+void main() {
+	int  a = 0;
+
+	IncrementPrev(a);
+	cout << a << endl;
+
+	IncrementPost(a);
+	cout << a << endl;
+}
+```
 
 {2} 다음 프로그램의 함수 Absolute는 인자의 값을 절댓값으로 변환하는 함수이다. 출력 결과가 3, 5가 나오도록 Absolute를 작성하시오.
 
@@ -1910,6 +1952,19 @@ void main(){
 }
 ```
 
+```c++
+정답
+
+void Absolute(int& arg) {
+	if (arg < 0) {
+		arg *= -1;
+	}
+	else {
+		arg;
+	}
+}
+```
+
 {3} 다음 프로그램의 출력 결과가 6, 3, 1, 0이 되도록 함수 Sum을 작성하시오.
 
 ```c++
@@ -1921,6 +1976,16 @@ void main() {
 }
 ```
 
+```c++
+정답
+
+int Sum(int arg1 = 0, int arg2 = 0, int arg3 = 0) {
+	int sum = 0;
+	sum = arg1 + arg2 + arg3;
+	return sum;
+}
+```
+
 {4} 가변 인자의 합계를 구하는 Sum 함수를 작성하시오. (단, 첫 매개 변수는 고정 인자로서 가변 인자의 개수를 나타낸다.)
 
 ```c++
@@ -1928,6 +1993,24 @@ void main() {
 	cout << Sum(5, 1, 2, 3, 4, 5) << endl;
 	cout << Sum(3, 1, 2, 3) << endl;
 	cout << Sum(1, 1) << endl;
+}
+```
+
+```c++
+정답
+
+int Sum(int count, ...) {
+	va_list arg_ptr;
+	va_start(arg_ptr, count);
+
+	int sum = 0;
+	for (int i = 0; i < count; i++) {
+		sum += va_arg(arg_ptr, int);
+	}
+
+	va_end(arg_ptr);
+
+	return sum;
 }
 ```
 
