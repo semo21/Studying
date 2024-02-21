@@ -2083,3 +2083,177 @@ void Sort(int* arr, const int size) {
 	}
 }
 ```
+
+# Chapter 9 Class
+
+- 구조적 프로그래밍의 특징을 설명하시오.
+
+- 절차적 프로그래밍은 프로그램의 상태를 나타내는 데이터를 함수 호출에 의해서 변경하면서 처리하는 과정을 거친다. 이때 나타날 수 있는 절차적 프로그래밍의 문제점을 데이터와 함수 관점에서 설명하시오.
+
+- 객체 지향 프로그래밍에서 객체의 의미는 무엇인가?
+
+- 객체 지향 프로그래밍의 장점을 두 가지 이상 제시하시오.
+
+- 클래스와 인스턴스 차이를 설명하시오.
+
+- C 언어 구조체 태그명과 C++ 클래스명의 차이를 비교 설명하시오.
+
+- 클래스 멤버에 대한 접근 지정자는 <span style="color: #44B444"></span>, <span style="color: #44B444"></span>, <span style="color: #44B444"></span>가 있으며 생략할 경우 <span style="color: #44B444"></span>이 된다.
+- C++ 구조체의 멤버 접근 지정자는 기본이 public이다. 이유를 설명하시오.
+- 다음 프로그램의 잘못된 부분을 수정하시오.
+
+```c++
+classCTest{
+  public:
+  CTest() : m_C1(1){
+
+  }
+  const int m_C1;
+  const int m_C2;
+  const int m_C3;
+};
+```
+
+- 클래스 멤버 함수에서 <span style="color: #44B444"></span>키워드는 클래스 인스턴스의 포인터를 나타낸다.
+
+- 다음 프로그램은 런타임 예외가 발생한다. 잘못된 부분과 이유를 설명하시오.
+
+```c++
+class CTest{
+  public:
+  int m_Value;
+
+  void Show(){
+    cout << m_Value << endl;
+  }
+};
+
+void main(){
+  CTest& pT  = NULL;
+  pT->Show();
+}
+```
+
+- 비정적 멤버 함수와 정적 멤버 함수의 차이를 설명하시오.
+
+- 다음 클래스 정의에서 잘못된 부분을 찾고 그 이유를 설명하시오.
+
+```c++
+class CTest{
+  public:
+  int m_Value;
+
+  void Func(){
+    cout  << m_Value << endl;
+  }
+
+  static void SFunc(){
+    cout << m_Value << endl;
+  }
+};
+```
+
+- 다음 프로그램에서 잘못된 부분을 찾고 그 이유를 설명하시오.
+
+```c++
+class CTest{
+  public:
+  static void SFunc(){
+
+  }
+};
+
+void main(){
+  CTest t;
+  t.SFunc();
+
+  CTest* pT = &t;
+  pT->SFunc();
+  CTest::SFunc();
+
+  SFunc();
+}
+```
+
+- 다음 클래스의 const 멤버 함수는 컴파일 오류가 발생한다. 컴파일 오류가 발생하지 않도록 수정하시오.
+
+```c++
+class CTest{
+  public:
+  CTest&  CFunc1() const{
+    return *this;
+  }
+
+  CTest* CFunc2()  const{
+    return this;
+  }
+};
+```
+
+- 다음 프로그램의 출력 결과는 무엇인가?
+
+```c++
+class CTest{
+  public:
+  void Func(){
+    cout << "General Function" << endl;
+  }
+
+  void Func() const{
+    cout << "Const Function" << endl;
+  }
+};
+
+void main(){
+  const CTest ct;
+  ct.Func();
+}
+```
+
+- 다음 프로그램에서 부모 클래스 CParent의 멤버인 m_Value의 값을 출력하도록 괄호 안을 채우시오.
+
+```c++
+class CParent{
+  public:
+  int  m_Value = 1;
+};
+
+class CTest : public CParent{
+  public:
+  int m_Value = 2;
+};
+
+void  main(){
+  CTest t;
+  cout << (       ) << endl;
+}
+```
+
+{1} 다음 로봇 명세를 보고 프로그램을 작성하시오.
+| 이름 | 신장(m) | 무게(T) | 마력 |
+|------------ |--------- |--------- |------ |
+| 태권브이 | 18 | 80 | 3000 |
+| 마징가 | 17 | 70 | 2500 |
+| 메칸더브이 | 20 | 90 | 3500 |
+| 그랜다이져 | 22 | 100 | 5000 |
+
+(1) 로봇을 나타내는 클래스 CRobot을 설계하시오. 명세를 입력할 수 있는 멤버 함수 Set과 명세를 출력하는 멤버 함수 Print가 있다.
+
+(2) 클래스 CRobot을 이용하여 모든 로봇의 명세를 출력하는 프로그램을 작성하시오.
+
+(3) 타입 정적 멤버 s_Value를 가지는 class CTest를 정의하고, s_Value에 1을 대입한 뒤에 출력하는 프로그램을 작성하시오.
+
+(4) 다음 프로그램은 자정부터 지나간 초를 입력받은 후 시, 분, 초를 출력한다. 프로그램이 완성될 수 있도록 클래스 CTime을 작성하시오.
+
+```c++
+void main(){
+  cout << "자정부터  지나간 초를 입력하세요"  << endl;
+
+  int Elapsed;
+  cin >> Elapsed;
+
+  CTime t;
+  t.SetElapesed(Elapsed);
+  t.PrintTime();
+}
+```
