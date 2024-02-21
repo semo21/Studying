@@ -2024,6 +2024,16 @@ void main() {
 }
 ```
 
+```c++
+정답
+
+void Print(int* arr, int size) {
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << endl;
+	}
+}
+```
+
 {6} 다음 프로그램과 같이 인자로 전달된 배열 요소의 순서를 뒤집는 함수 Reverse를 작성하시오.
 
 ```c++
@@ -2035,6 +2045,18 @@ void main() {
 }
 ```
 
+```c++
+정답
+
+void Reverse(int* arr, const int size) {
+	for (int i = 0; i < size / 2; i++) {
+		int temp = arr[i];
+		arr[i] = arr[size - 1 - i];
+		arr[size - 1 - i] = temp;
+	}
+}
+```
+
 {7} 다음 프로그램과 같이 인자로 전달된 배열을 오름차순으로 정렬하는 함수 Sort를 작성하시오.
 
 ```c++
@@ -2043,5 +2065,21 @@ void main() {
 	int arr[10] = { 7,1,3,5,6,2,4 };
 	Sort(arr, size);
 	Print(arr, size);
+}
+```
+
+```c++
+정답
+
+void Sort(int* arr, const int size) {
+	for (int i = 0; i < size; i++) {
+		for (int j = i; j < size; j++) {
+			if (arr[i] > arr[j]) {
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
 }
 ```
