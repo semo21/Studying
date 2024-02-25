@@ -2113,12 +2113,13 @@ void Sort(int* arr, const int size) {
 - 클래스 멤버에 대한 접근 지정자는 <span style="color: #44B444">private</span>, <span style="color: #44B444">public</span>, <span style="color: #44B444">protected</span>가 있으며 생략할 경우 <span style="color: #44B444">private</span>이 된다.
 
 - C++ 구조체의 멤버 접근 지정자는 기본이 public이다. 이유를 설명하시오.
-><span style="color: #44B444">클래스의  경우  객체 지향 프로그래밍의 특징을 최대한 나타내기 위해서 기본값이 private이지만, 구조체의 경우 호환성을 지키기 위해 기본값이 public으로 설정되어있다.</span>
+
+  > <span style="color: #44B444">클래스의 경우 객체 지향 프로그래밍의 특징을 최대한 나타내기 위해서 기본값이 private이지만, 구조체의 경우 호환성을 지키기 위해 기본값이 public으로 설정되어있다.</span>
 
 - 다음 프로그램의 잘못된 부분을 수정하시오.
 
 ```c++
-classCTest{
+class CTest{
   public:
   CTest() : m_C1(1){
 
