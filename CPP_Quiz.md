@@ -2130,6 +2130,20 @@ class CTest{
 };
 ```
 
+```c++
+정답
+
+class CTest{
+  public:
+  CTest() : m_C1(1){
+
+  }
+  const int m_C1;
+  const int m_C2 = 1;
+  const int m_C3 = 1;
+};
+```
+
 - 클래스 멤버 함수에서 <span style="color: #44B444"></span>키워드는 클래스 인스턴스의 포인터를 나타낸다.
 
 - 다음 프로그램은 런타임 예외가 발생한다. 잘못된 부분과 이유를 설명하시오.
