@@ -2142,6 +2142,8 @@ class CTest{
   const int m_C2 = 1;
   const int m_C3 = 1;
 };
+
+// 생성자에서 m_C1만 1로 초기화하고 있기 때문에 초기화되지 않는 m_C2와 m_C3를 초기화해주어야 한다.
 ```
 
 - 클래스 멤버 함수에서 <span style="color: #44B444"></span>키워드는 클래스 인스턴스의 포인터를 나타낸다.
