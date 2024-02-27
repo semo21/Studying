@@ -2255,6 +2255,24 @@ class CTest{
 };
 ```
 
+```c++
+정답
+
+class CTest{
+  public:
+  const CTest&  CFunc1() const{
+    return *this;
+  }
+
+  const CTest* CFunc2() const{
+    return this;
+  }
+};
+
+// 멤버 함수 앞에 const를 붙여 반환 타입이 변하지 않도록 한정한다. 이렇게 해야 컴파일러가 멤버 함수를 호출하며 반환 타입이 변하지 않는다는 것을 알고 안전하게 호출할 수 있기 때문이다.
+// 컴파일러는 const 멤버 함수를 호출할 때 멤버의 변경이 가능한 상황이 있다면 const 멤버 함수를 호출하지 않으며 오류를 발생한다.
+```
+
 - 다음 프로그램의 출력 결과는 무엇인가?
 
 ```c++
@@ -2275,6 +2293,10 @@ void main(){
 }
 ```
 
+> <span style="color: #44B444">Const Function</span>
+>
+> <span style="color: #44B444">Const 객체는 비 const 함수를 호출할 수 없다. 따라서 오로지 const 함수만 호출한다. 하지만 일반 객체의 경우, General Function을 호출한다. 하지만 비 const 함수가 정의되지 않았다면 const 함수를 호출한다.</span>
+
 - 다음 프로그램에서 부모 클래스 CParent의 멤버인 m_Value의 값을 출력하도록 괄호 안을 채우시오.
 
 ```c++
@@ -2291,6 +2313,25 @@ class CTest : public CParent{
 void  main(){
   CTest t;
   cout << (       ) << endl;
+}
+```
+
+```c++
+정답
+
+class CParent{
+  public:
+  int  m_Value = 1;
+};
+
+class CTest : public CParent{
+  public:
+  int m_Value = 2;
+};
+
+void  main(){
+  CTest t;
+  cout <<  << endl;
 }
 ```
 
