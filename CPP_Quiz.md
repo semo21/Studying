@@ -2331,8 +2331,10 @@ class CTest : public CParent{
 
 void  main(){
   CTest t;
-  cout <<  << endl;
+  cout << t.CParent::m_Value << endl;
 }
+
+// 범위(::) 연산자를 사용하여 이름이 중복된 부모 클래스의 멤버 데이터를 지정할 수 있다.
 ```
 
 {1} 다음 로봇 명세를 보고 프로그램을 작성하시오.
@@ -2345,9 +2347,76 @@ void  main(){
 
 (1) 로봇을 나타내는 클래스 CRobot을 설계하시오. 명세를 입력할 수 있는 멤버 함수 Set과 명세를 출력하는 멤버 함수 Print가 있다.
 
+```c++
+class CRobot {
+	string name;
+	int height;
+	int weight;
+	int power;
+
+public:
+	void Set(string n, int h, int w, int p) {
+		name = n;
+		height = h;
+		weight = w;
+		power = p;
+	}
+
+	void Print() {
+		cout << endl << "Name: " << name << endl
+			<< "Height: " << height << endl
+			<< "Weight: " << weight << endl
+			<< "Power: " << power << endl;
+	}
+};
+```
+
 (2) 클래스 CRobot을 이용하여 모든 로봇의 명세를 출력하는 프로그램을 작성하시오.
 
+```c++
+int main() {
+
+	CRobot robots[4] = {};
+
+	CRobot t;
+	t.Set("태권브이", 18, 80, 3000);
+
+	CRobot m;
+	m.Set("마징가", 17, 70, 2500);
+
+	CRobot mk;
+	mk.Set("메칸더브이", 20, 90, 3500);
+
+	CRobot g;
+	g.Set("그랜다이져", 22, 100, 5000);
+
+	robots[0] = t, robots[1] = m, robots[2] = mk, robots[3] = g;
+
+	for (int i = 0; i < 4; i++) {
+		robots[i].Print();
+	}
+	return 0;
+}
+```
+
 (3) 타입 정적 멤버 s_Value를 가지는 class CTest를 정의하고, s_Value에 1을 대입한 뒤에 출력하는 프로그램을 작성하시오.
+
+```c++
+class CRobot {
+	static int s_Value;
+	static void PrintS() {
+		cout << s_Value << endl;
+	}
+};
+
+int CRobot::s_Value = 1;
+
+int main() {
+  CRobot::PrintS();
+
+	return 0;
+}
+```
 
 (4) 다음 프로그램은 자정부터 지나간 초를 입력받은 후 시, 분, 초를 출력한다. 프로그램이 완성될 수 있도록 클래스 CTime을 작성하시오.
 
@@ -2362,4 +2431,21 @@ void main(){
   t.SetElapesed(Elapsed);
   t.PrintTime();
 }
+```
+
+```c++
+class CTime {
+	int elapsedTime;
+
+public:
+	void SetElapesed(int e) {
+		elapsedTime = e;
+	}
+
+	void PrintTime() {
+		cout << elapsedTime / 3600 << "시 "
+			<< (elapsedTime % 3600) / 60 << "분 "
+			<< (elapsedTime % 60) << "초 입니다." << endl;
+	}
+};
 ```
