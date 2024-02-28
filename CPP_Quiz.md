@@ -2449,3 +2449,249 @@ public:
 	}
 };
 ```
+
+# Chapter 10 Constructor and Destructor
+
+- 생성자와 멤버 함수의 차이점을 두 가지 이상 기술하시오.
+
+- 생성자는 중복 정의를 할 수 있으나 소멸자는 오직 단 하나만 존재할 수 있는데, 그 이유를 기술하시오.
+- 암시적 생성자가 컴파일러에 의해서 논리적으로 추가되는 경우를 기술하시오.
+
+- 상속 관계 클래스에서 소멸자의 호출 순서는 <span style="color: #44B444"></span> 클래스 소멸자, <span style="color: #44B444"></span> 클래스 소멸자이다.
+
+- 클래스 CTest 복사 생성자를 선언해보시오.
+
+- 암시적 복사 생성자가 컴파일러에 의해서 논리적으로 추가되는 경우를 기술하시오.
+
+- 암시적 복사 생성자는 블록 시작 전(선처리 영역)에 부모 클래스와 멤버 데이터 클래스의 <span style="color: #44B444"></span>를 호출한다.
+
+- 다음 프로그램의 출력 결과는 무엇인가?
+
+```c++
+class CParent{
+  public:
+  CParent(){
+    cout << "CParent Constructor" << endl;
+  }
+
+  CParent(const CParnet& obj){
+    cout << "CParent Copy Constructor" << endl;
+  }
+};
+
+class CTestA : public CParent{
+  public:
+  CTestA(){
+
+  }
+
+  CTestA(const CTestA& obj){
+
+  }
+};
+
+class CTest B : public CParent{
+  public:
+  CTestB(){
+
+  }
+};
+
+void main(){
+  CTestA a0;
+  CTestA a1 = a0;
+
+  CTestB b0;
+  CTestB b1 = b0;
+}
+```
+
+- 다음 프로그램의 출력 결과는 무엇인가?
+
+```c++
+class CChild{
+  public:
+  CChild(){
+    cout << "CChild Constructor" << endl;
+  }
+
+  CChild(const CChild& obj){
+    cout << "CChild Copy Constructor" << endl;
+  }
+};
+
+class CTestA{
+  public:
+  CTestA(){
+
+  }
+
+  CTestA(const CTestA& obj){
+
+  }
+
+  CChild m_C;
+};
+
+class CTestB{
+  public:
+  CTestB(){
+
+  }
+
+  CChild m_C;
+};
+
+void main(){
+  CTestA a0;
+  CTestA a1 = a0;
+
+  CTestB b0;
+  CTestB b1 = b0;
+}
+```
+
+- <span style="color: #44B444"></span>는 컴파일러가 타입 변환 생성자를 사용하여 암시적 타입 변환을 수행할 수 없도록 지시하는 역할을 한다.
+
+- 다음 코드의 출력 결과로 "CParent B"가 나오도록 CTest의 생성자를 수정하시오.
+
+```c++
+class CParent{
+  public:
+  CParent(){
+    cout << "CParent A" << endl;
+  }
+
+  CParent(int arg){
+    cout << "CParent B" << endl;
+  }
+};
+
+class CTest : public CParent{
+  public:
+  CTest(){
+  }
+};
+
+void main(){
+  CTest t;
+}
+```
+
+- 다음 코드의 출력 결과로 "CChild B"가 나오도록 CTest의 생성자를 수정하시오.
+
+```c++
+class CChild{
+  public:
+  CChild(){
+    cout << "CChild A" << endl;
+  }
+
+  CChild(int arg){
+    cout << "CChild B" << endl;
+  }
+};
+
+class CTest{
+  public:
+  CTest(){
+  }
+
+  CChild m_Child;
+};
+
+void main(){
+  CTest t;
+}
+```
+
+- 다음 프로그램에서 초기화 리스트를 사용하여 m_Const는 1로, m_Ref는 m_Value로 초기화되도록 생성자를 수정하시오.
+
+```c++
+class CTest{
+  public:
+  CTest(){
+
+  }
+
+  int m_Value;
+  const int m_Const;
+  int& m_Ref;
+};
+
+void main(){
+  CTest t;
+}
+```
+
+{1} 다음 프로그램처럼 정수를 문자열로 바꾼 후 멤버 m_Str에 저장하는 클래스 CIntToStr를 타입 변환 생성자를 이용하여 작성하시오. (단, C 표준 라이브러리 함수인 \_itoa를 사용한다.)
+
+```c++
+void main(){
+  char* str = CIntToStr(1).m_Str;
+  cout << str << endl;
+}
+```
+
+{2} 클래스 CPerson은 멤버 데이터로 이름(m_Name)과 ID(m_ID)를 갖는다. CPerson 객체가 다른 CPerson 객체로부터 복사되어 생성될 경우 이름에는 Copy를 붙이고, ID는 -1으로 만드는 클래스를 작성하시오.
+
+```c++
+void main(){
+  CPerson p1("Bill", 1);
+  CPerson p2 = p1;
+
+  cout << p1.m_Name << " " << p1.m_ID << endl;
+  cout << p2.m_Name << " " << p2.m_ID << endl;
+}
+
+// 결과값
+// Bill 1
+// Bill Copy -1
+```
+
+{3} 다음 프로그램에서 복사 생성된 CPerson 객체의 이름에는 뒤에 Copy를 붙이고, 부모 이름은 '유전자공학'으로 변경하고 싶다. 출력 결과가 다음처럼 나오도록 클래스 CParent와 CPerson의 부족한 부분을 완성하시오.
+
+```c++
+class CParent{
+  public:
+  CParent(){
+
+  }
+
+  char m_Name[16] = {0};
+};
+
+class CPerson : public CParent{
+  public:
+  CPerson(char* ParentName, char* Name){
+    strcat(CParent::m_Name, ParentName);
+    strcat(m_Name, Name);
+  }
+
+  char m_Name[16] = {0};
+};
+
+void main(){
+  CPerson p1("광개토대왕", "장수왕");
+  CPerson p2 = p1;
+
+  cout << p1.CParent::m_Name << " - " << p1.m_Name << endl;
+  cout << p2.CParent::m_Name << " - " << p2.m_Name << endl;
+}
+
+// 결과값
+// 광개토대왕 - 장수왕
+// 유전자공학 - 장수왕 Copy
+```
+
+{4} 다음 프로그램처럼 문자열을 인자로 받는 생성자를 가진 클래스 CLength를 정의하시오. (CLength의 멤버 함수 GetLength는 인자의 길이를 반환한다.)
+
+```c++
+void main(){
+  CLength l = "abc";
+  cout << l.GetLength() << endl;
+}
+
+// 결과값
+// 3
+```
