@@ -6,4 +6,4 @@ And when i program C with my Visual Studio 2022, current version doesn't accept 
 
 And laptop branch is also for me when using laptop.
 
-030124 protection rule test!
+030824 Today i was going out for doing some stuffs. So no updates for today. i'm just typping it for checking my github contribution of today. Kinda cheating. :b
