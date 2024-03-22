@@ -8,3 +8,5 @@ And when i program C with my Visual Studio 2022, current version doesn't accept 
 Also Baldur's Gate's genre has been always not for me, but BG3 is one of the best game. The Camera move, Characters appearance, game systems and of course it's fun, but most of all, it's narration and story telling is the best. Like i'm really the one of them. :D. maybe i'll continue my study since tomorrow lol.
 
 032024 lol still hell diving
+
+032224 Started devleoping sliding puzzle with Unity, but haven't figured out how to properly contact source coudes with github repo.
