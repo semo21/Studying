@@ -10,3 +10,5 @@ Also Baldur's Gate's genre has been always not for me, but BG3 is one of the bes
 032024 lol still hell diving
 
 032224 Started devleoping sliding puzzle with Unity, but haven't figured out how to properly contact source coudes with github repo.
+
+032324 Still figuring out and developing puzzle. Just leave a log for today.
