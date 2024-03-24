@@ -12,3 +12,5 @@ Also Baldur's Gate's genre has been always not for me, but BG3 is one of the bes
 032224 Started devleoping sliding puzzle with Unity, but haven't figured out how to properly contact source coudes with github repo.
 
 032324 Still figuring out and developing puzzle. Just leave a log for today.
+
+032424 Today i implemented sprite slicing today in InGame scene. But while developing, reminds me something that i need Lobby scene. and i don't know why, adding .gitignore causing some trouble to sync github. I'm guessing the context of .gitignore is the problem, not sure though.
