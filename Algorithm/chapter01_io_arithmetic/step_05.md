@@ -1,5 +1,5 @@
 # step 5
-- 1008번 문제
+- [1008번](https://www.acmicpc.net/problem/1008)
 ## 난이도
 - 브론즈 5
 ## 핵심

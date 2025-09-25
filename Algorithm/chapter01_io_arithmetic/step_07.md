@@ -1,5 +1,5 @@
 # step 7
-- 10926번 문제
+- [10926번](https://www.acmicpc.net/problem/10926)
 ## 난이도
 - 브론즈 5
 ## 핵심

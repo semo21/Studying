@@ -1,5 +1,5 @@
 # step 6
-- 10869번 문제
+- [10869번](https://www.acmicpc.net/problem/10869)
 ## 난이도
 - 브론즈 5
 ## 핵심

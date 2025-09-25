@@ -1,5 +1,5 @@
 # step 4
-- 10998번 문제
+- [10998번](https://www.acmicpc.net/problem/10998)
 ## 난이도
 - 브론즈 5
 ## 핵심

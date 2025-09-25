@@ -1,5 +1,5 @@
 # step 9
-- 10430번 문제
+- [10430번](https://www.acmicpc.net/problem/10430)
 ## 난이도
 - 브론즈 5
 ## 핵심

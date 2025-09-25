@@ -1,5 +1,5 @@
 # step 2
-- 1000번 문제
+- [1000번](https://www.acmicpc.net/problem/1000)
 ## 난이도
 - 브론즈 5
 ## 핵심

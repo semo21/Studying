@@ -1,5 +1,5 @@
 # step 1
-- 2557번 문제
+- [2557번](https://www.acmicpc.net/problem/2557)
 ## 난이도
 - 브론즈 5
 ## 핵심
