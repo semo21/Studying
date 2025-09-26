@@ -10,7 +10,13 @@
 - 코드 스타일 및 사고 과정 포트폴리오화
 
 ## 구조
-- /step01_io_arithmetic/: 입출력과 사칙연산의 기본 개념
+- Algorithm/
+  - 2025년도 이후 풀이 기록, C++만 사용
+    - step01_io_arithmetic/: 입출력과 사칙연산의 기본 개념
+    - step02_condition_statement/: 조건문 기본 개념
+- Legacy/
+  - 예전에 풀었던 문제들 풀이 기록
+  - C, C++, C#, python 사용
 
 ## 예시
 - 문제: 1000번 A+B
