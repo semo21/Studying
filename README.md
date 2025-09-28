@@ -10,10 +10,12 @@
 - 코드 스타일 및 사고 과정 포트폴리오화
 
 ## 구조
-- Algorithm/
-  - 2025년도 이후 풀이 기록, C++만 사용
-    - step01_io_arithmetic/: 입출력과 사칙연산의 기본 개념
-    - step02_condition_statement/: 조건문 기본 개념
+- /Algorithm
+  - 2025년도 이후 풀이 기록
+  - C++ 사용
+    - /step01_io_arithmetic/: 입출력과 사칙연산의 기본 개념
+    - /step02_conditional_statement/: 조건문 기본 개념
+    - /step03_iterations/: 반복문 기본 개념
 - Legacy/
   - 예전에 풀었던 문제들 풀이 기록
   - C, C++, C#, python 사용
@@ -39,7 +41,15 @@ This repository constains a collection of algorithm problem solutions, implement
 - Showcase coding style and reasoning as part of a portfolio.
 
 ## Repository Structure 
+- /Algorithm
+  - Solutions from 2025 onward
+  - Written only in C++
+- /Legacy
+  - Previous solution records
+  - Written in C, C++, C# and Python
 - /step01_io_arithmetic/: Basic concepts of input/output and arithmetic operations
+- /step02_conditional_statement/: Basic concepts of conditional statements
+- /step03_iterations/: Basic concepts of iterations(loops).
 
 ## Example
 - Problem: 1000 - A+B
