@@ -1,4 +1,4 @@
-# step 7
+# step 1
 - [2739번](https://www.acmicpc.net/problem/2739)
 ## 난이도
 - 브론즈 5

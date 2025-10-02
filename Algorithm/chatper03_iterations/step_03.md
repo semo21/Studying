@@ -1,4 +1,4 @@
-# step 7
+# step 3
 - [8393번](https://www.acmicpc.net/problem/8393)
 ## 난이도
 - 브론즈 5

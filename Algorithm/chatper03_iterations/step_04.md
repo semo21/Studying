@@ -1,4 +1,4 @@
-# step 7
+# step 4
 - [25304번](https://www.acmicpc.net/problem/25304)
 ## 난이도
 - 브론즈 4
