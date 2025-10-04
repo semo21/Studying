@@ -14,6 +14,8 @@ int main(){
     while(std::cin >> a >> b){        
         std::cout << a+b << "\n";
     }
+    
+    return 0;
 }
 // 0 < a, b < 10
 // End of File 구현이 핵심.
