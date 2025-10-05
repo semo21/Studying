@@ -32,9 +32,9 @@ int main(){
 }
 // 1 <= n <= 100;
 // 배열의 최대길이를 미리 선언
-// c++배열에서의 nullpt자리를 계산하여 n의 범위 +1하여 설정.
 // 입력받은 값을 앞서 입력받은 정수의 개수만큼 탐색.
 // 같다면 count 1씩 증가.
+
 #include <iostream>
 #include <vector>
 
