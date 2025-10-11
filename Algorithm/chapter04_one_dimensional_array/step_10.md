@@ -1,4 +1,4 @@
-# step 8
+# step 10
 - [1546 번](https://www.acmicpc.net/problem/1546)
 ## 난이도
 - 브론즈 1

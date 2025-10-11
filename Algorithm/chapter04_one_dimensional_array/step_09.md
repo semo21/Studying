@@ -1,4 +1,4 @@
-# step 8
+# step 9
 - [10811 번](https://www.acmicpc.net/problem/10811)
 ## 난이도
 - 브론즈 2
