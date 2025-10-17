@@ -33,7 +33,7 @@ int main(){
     int a, b;
     std::cin >> a >> b;
 
-    int reverseNum = [](int x){
+    auto reverseNum = [](int x){
         int r = 0;
         while (x > 0){
             r = r * 10 + (x % 10);
