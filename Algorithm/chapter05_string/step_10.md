@@ -15,13 +15,9 @@ int main(){
     std::cin >> input;
     int result = 0;
     for(char e : input){
-        if((e-'A') >=16 && (e-'A') <= 19){
-            result += 7 + 3;
-        }else if((e-'A') >= 23){
-            result += 9 + 3;
-        }else{
-            result += (e-'A')/3 + 3;
-        }
+        result += (e-'A')/3 + 3;
+        if(e == 'S' || e == 'V' || e >= 'Y')    result -= 1;
+
     }
 
     std::cout << result << '\n';
