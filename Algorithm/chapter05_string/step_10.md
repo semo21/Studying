@@ -17,12 +17,11 @@ int main(){
     for(char e : input){
         result += (e-'A')/3 + 3;
         if(e == 'S' || e == 'V' || e >= 'Y')    result -= 1;
-
     }
 
     std::cout << result << '\n';
     return 0;
 }
 
-// 
+// 보정이 필요한 구간인 S, V, Y, Z의 분기에 맞게 조건문으로 보정.
 ```
