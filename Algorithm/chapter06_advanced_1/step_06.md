@@ -1,4 +1,4 @@
-# step 5
+# step 6
 - [2941 번](https://www.acmicpc.net/problem/2941)
 ## 난이도
 - 실버 5
