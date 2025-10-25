@@ -1,5 +1,5 @@
-# step 6
-- [2941 번](https://www.acmicpc.net/problem/2941)
+# step 7
+- [1316 번](https://www.acmicpc.net/problem/1316)
 ## 난이도
 - 실버 5
 ## 핵심
