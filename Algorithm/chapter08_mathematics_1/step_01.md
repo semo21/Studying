@@ -1,9 +1,9 @@
-# step 4
+# step 1
 - [2745 번](https://www.acmicpc.net/problem/2745)
 ## 난이도
 - 브론즈 2
 ## 핵심
-- 
+- 진법 변환
 
 ## 풀이
 ```c++
