@@ -15,9 +15,14 @@ int main(){
     std::cin.tie(nullptr);
    
     int n;
+    int k = 2;
     std::cin >> n;
     
+    while(n--){
+        k += k-1;
+    }
     
+    std::cout << k * k << '\n';
     return 0;
 }
 
