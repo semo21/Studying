@@ -3,7 +3,7 @@
 ## 난이도
 - 브론즈 1
 ## 핵심
-- 조금 더 효율적인 약수 찾기
+- 약수 탐색 구현
 
 ## 풀이
 ```c++
@@ -43,7 +43,7 @@ int main(){
             }
             std::cout << '\n';
         }else{
-            std::cout << n << " is NOT peerfect." << '\n';
+            std::cout << n << " is NOT perfect." << '\n';
         }
     }
     
