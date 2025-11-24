@@ -1,7 +1,9 @@
-# step 6
+# step 7
 - [5073 번](https://www.acmicpc.net/problem/5073)
+
 ## 난이도
 - 브론즈 3
+
 ## 핵심
 - 변의 길이로 삼각형을 판별 및 분류
 
