@@ -37,21 +37,4 @@ int main(){
 // 5로 최대한 많이 채워야하므로 i = N/5부터 --i하며 역순으로 내려감
 // N >=3 이므로 bags가 0이라면 해가 없으므로 bags = -1
 // 정리된 bags를 출력
-
-#include <iostream>
-
-int main(){
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    
-
-
-    return 0;
-}
-// 5x + 3y = N
-// 3y = -5x + N
-// y = -5x/3 + N/3
-// y = 0 일때 x > 0, 5x < N, x < N / 5
-// x = 0 일때 y > 0, N > 3
-
 ```
