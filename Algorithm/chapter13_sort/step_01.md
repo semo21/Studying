@@ -66,4 +66,16 @@ int main(){
     return 0;
 }
 // 삽입 정렬
+
+#include <iostream>
+#include <vector>
+
+int main(){
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+
+    
+    return 0;
+}
+// 선택 정렬
 ```
