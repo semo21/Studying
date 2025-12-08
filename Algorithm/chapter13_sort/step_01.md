@@ -74,7 +74,24 @@ int main(){
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
 
-    
+    int N;
+    std::cin >> N;
+    std::vector<int> arr(N);
+    for(int i = 0; i < N; ++i)  std::cin >> arr[i];
+
+    for(int i = 0; i < N - 1; ++i){
+        int minIdx = i;
+        for(int j = i+1; j < N; ++j){
+            if(arr[j] < arr[minIdx]){
+                minIdx = j;
+            }
+        }
+        std::swap(arr[i], arr[minIdx]);
+    }
+
+    for(int e : arr){
+        std::cout << e << '\n';
+    }
     return 0;
 }
 // 선택 정렬
