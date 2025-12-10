@@ -1,4 +1,4 @@
-# step 2
+# step 3
 - [25305 번](https://www.acmicpc.net/problem/25305)
 
 ## 난이도
@@ -76,5 +76,6 @@ void selection_sort(std::vector<int>& arr){
         std::swap(arr[i], arr[maxIdx]);
     }
 }
-// 
+// 삽입, 버블, 선택 정렬로 진행한 풀이
+// k번째 수는 k-1번째 인덱스임을 보정
 ```
