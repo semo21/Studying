@@ -1,4 +1,4 @@
-# step 4
+# step 5
 - [10989 번](https://www.acmicpc.net/problem/10989)
 
 ## 난이도
