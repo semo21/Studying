@@ -36,7 +36,7 @@ int main(){
         return a < b;   // std::string의 비교는 사전순 비교
     });
 
-    // 중복 제가
+    // 중복 제거
     v.erase(std::unique(v.begin(), v.end()), v.end());
     
     for(const auto& s : v){
@@ -44,5 +44,5 @@ int main(){
     }
     return 0;
 }
-// 
+// sort 이후에 중복 제거까지 구현하면 되는 문제.
 ```
