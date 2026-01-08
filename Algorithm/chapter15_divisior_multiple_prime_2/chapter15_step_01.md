@@ -1,4 +1,4 @@
-# Chapter 15 Step 08
+# Chapter 15 Step 01
 - [1934 번](https://www.acmicpc.net/problem/1934)
 
 ## 난이도
