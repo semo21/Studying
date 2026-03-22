@@ -76,5 +76,5 @@ int main() {
 
     return 0;
 }
-// 
+// switch와 deque를 이용하여 풀이
 ```
